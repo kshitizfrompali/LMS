@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Sumit</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <style type="text/css">
+      /* .form-control {
+        border-color: #eee;
+        min-height: 41px;
+        box-shadow: none !important;
+      }
+      .form-control:focus {
+        border-color: #5cd3b4;
+      }
+      .form-control,
+      .btn {
+        border-radius: 3px;
+      } */
+      /* .signup-form {
+        width: 500px;
+        margin: 0 auto;
+        padding: 30px 0;
+      } */
+      /* .signup-form h2 {
+        color: #333;
+        margin: 0 0 30px 0;
+        display: inline-block;
+        padding: 0 30px 10px 0;
+        border-bottom: 3px solid #ffffff;
+      } */
+      /* .signup-form form {
+        color: #999;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        background: #fff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+      } */
+      /* .signup-form .form-group {
+        margin-bottom: 20px;
+      } */
+      /* .signup-form label {
+        font-weight: normal;
+        font-size: 16px;
+      }
+      .signup-form input[type="checkbox"] {
+        margin-top: 2px;
+      } */
+      /* .signup-form .btn {
+        font-size: 16px;
+        font-weight: bold;
+        background: #161df0;
+        border: none;
+        margin-top: 20px;
+        min-width: 140px;
+      }
+      .signup-form .btn:hover,
+      .signup-form .btn:focus {
+        background: #41cba9;
+        outline: none !important;
+      }
+      .signup-form a {
+        color: #2b04ff;
+
+        text-decoration: underline;
+      }
+      .signup-form a:hover {
+        text-decoration: none;
+      }
+      .signup-form form a {
+        color: #5cd3b4;
+        text-decoration: none;
+      }
+      .signup-form form a:hover {
+        text-decoration: underline;
+      } */
+
+      .signup-form {
+        width: 500px;
+        margin: auto;
+        margin-top: 10%;
+        margin-bottom: 5.9rem;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        box-shadow: 11px 10px 18px 0px rgb(175, 175, 175);
+        border-radius: 10px;
+      }
+      .signup-form a {
+        color: #737277;
+        text-decoration: none;
+      }
+      .signup-form a:hover {
+        color: #737277;
+        text-decoration: underline;
+      }
+      .image-wrapper {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .image-wrapper h2 {
+        margin-top: 1rem;
+        color: black;
+      }
+      .last-text {
+        color: black;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      }
+      .final-sub {
+        text-align: center;
+      }
+      .admin-button {
+        background-color: black !important;
+        color: white !important;
+        border-radius: 28px !important;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 20px;
+        min-width: 140px;
+        margin-bottom: 20px;
+      }
+      .admin-button:hover,
+      .admin-button:focus {
+        background: #41cba9 !important;
+        outline: none !important;
+      }
+      .form-group {
+        display: flex;
+      }
+      .for-label {
+        color: black;
+        padding-top: 3px;
+      }
+      .for-input {
+        margin-top: 4px !important;
+      }
+      select {
+        margin-left: 2rem !important;
+        width: 350px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: white;
+        border: 2px solid black;
+        margin-bottom: 1rem !important;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+
+    <div class="signup-form">
+      <form method="post" class="form-horizontal">
+        <div class="image-wrapper">
+          <h2>ISSUE BOOK TO STUDENT</h2>
+        </div>
+
+        {% csrf_token %} {% for field in form %}
+        <div class="form-group">
+          <!-- <label class="for-label col-xs-4">{{ field.label_tag }}</label>&nbsp&nbsp -->
+          <div class="col-xs-8 for-input">{{ field }}</div>
+        </div>
+        {% endfor %}
+
+        <div class="final-sub">
+          <button type="submit" class="btn admin-button">ISSUE</button>
+        </div>
+      </form>
+      <div class="text-center">
+        <span class="last-text">View Issued Book to Student</span>&nbsp<a
+          href="viewissuedbook"
+          >Click here</a
+        >
+      </div>
+    </div>
+
+    {% include "library/footer.html" %}
+  </body>
+</html>

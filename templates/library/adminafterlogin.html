@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 24px;
+        line-height: 1.33;
+      }
+
+      .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+      }
+
+      .jumbotron {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      .jumbotron h1 {
+        text-align: center;
+      }
+      .card-comp {
+        width: 300px;
+        margin-right: 2rem;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        background: #ececec;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .card-comp:hover,
+      .card-comp:active {
+        box-shadow: 11px 10px 18px 0px rgb(175, 175, 175);
+      }
+
+      .cards {
+        margin-top: 2rem;
+        margin-bottom: 10px;
+      }
+      .forImage {
+        margin-bottom: 1.5rem;
+      }
+      .simple-card {
+        margin-left: 5rem;
+      }
+      .title-text {
+        color: #000;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .forButton {
+        color: #000;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+        text-decoration: none !important;
+      }
+      .forButton:hover {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="title-text">Your work to do as Admin</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 card-comp simple-card">
+          <!-- First Card -->
+          <a href="addbook">
+            <div
+              class="cards text-center d-flex flex-column align-items-center"
+            >
+              <img class="forImage" src="{% static "images/AddBook.png" %}"
+              width="108px" height="108px" alt="Card image cap">
+              <a href="addbook" class="forButton">Add <br />Book To Library</a>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-3 card-comp">
+          <!-- Second Card -->
+
+          <a href="viewbook">
+            <div
+              class="cards text-center d-flex flex-column align-items-center"
+            >
+              <img class="forImage" src="{% static "images/View.png" %}"
+              width="108px" height="108px" alt="Card image cap">
+              <a
+                href="viewbook"
+                class="forButton"
+                role="button"
+                aria-pressed="true"
+                >View<br />
+                Available Book</a
+              >
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 card-comp">
+          <!-- Third Card -->
+          <a href="issuebook">
+            <div
+              class="cards text-center d-flex flex-column align-items-center"
+            >
+              <img class="forImage" src="{% static "images/Issue.png" %}"
+              width="108px" height="108px" alt="Card image cap">
+              <a
+                href="issuebook"
+                class="forButton"
+                role="button"
+                aria-pressed="true"
+                >Issue<br />
+                New Book</a
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center" style="margin-bottom: 6rem">
+        <div class="col-md-3 card-comp">
+          <!-- Fourth Card -->
+          <a href="viewissuedbook">
+            <div
+              class="cards text-center d-flex flex-column align-items-center"
+            >
+              <img class="forImage" src="{% static "images/View2.png" %}"
+              width="108px" height="108px" alt="Card image cap">
+              <a
+                href="viewissuedbook"
+                class="forButton"
+                role="button"
+                aria-pressed="true"
+                >View<br />
+                Issued Book</a
+              >
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 card-comp">
+          <!-- Fifth Card -->
+          <a href="viewstudent">
+            <div
+              class="cards text-center d-flex flex-column align-items-center"
+            >
+              <img class="forImage" src="{% static "images/Vs.png" %}"
+              width="108px" height="108px" alt="Card image cap">
+              <a
+                href="viewstudent"
+                class="forButton"
+                role="button"
+                aria-pressed="true"
+                >View<br />
+                Student</a
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {% include "library/footer.html" %}
+  </body>
+</html>

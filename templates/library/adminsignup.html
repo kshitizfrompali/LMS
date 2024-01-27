@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>LazyCoder || sumit</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      body {
+        color: #aa082e;
+        font-family: "Roboto", sans-serif;
+      }
+	  .signup-form {
+  		width: 500px;
+  		margin: auto;
+  		margin-top: 5%;
+  		padding: 30px 0;
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		align-items: center;
+  		background: #fff;
+        /* box-shadow: 11px 10px 18px 0px  rgb(175, 175, 175);    */
+ 		border-radius: 10px;
+}
+	  .signup-form form {
+		padding:0 30px;
+}
+      .signup-form .btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        min-width: 140px;
+      }
+      .title-text {
+        color: #000;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+		margin-bottom: 1rem;
+      }
+      .second-text {
+        color: #000;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+		margin-bottom: 2rem;
+      }
+	  .main-name{
+		display: flex;
+	  }
+	  .for-radius{
+		border-radius: 10px;
+	  }
+	  .inp-field {
+		padding-bottom: 24px;
+	  }
+	  .admin-button {
+        background-color: black !important;
+        color: white;
+        border-radius: 28px;
+      }
+	  .final-sub{
+		text-align: center;
+	  }
+	  .last-text{
+		color:black;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+	  }
+	  .final-div a{
+		color: #737277;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+	  }
+	  .final-div{
+		margin-top:1rem;
+	  }
+    </style>
+  </head>
+  <body>
+    <div class="signup-form">
+      <form method="post" class="form-horizontal">
+		{% csrf_token %} 
+        <center><h2 class="title-text">Admin Signup</h2></center>
+          <center><h5 class="second-text">Now Let’s Control The Library.</h5></center>
+		{% load static %}
+			 <div class="main-name">
+			 <div class="inp-field pr-4">
+				{{form.first_name}}  
+				{%for error in form.first_name.errors%}
+				   <span class="text-danger">{{error}}</span>
+				{%endfor%}
+			</div>
+			<div class="inp-field">
+				{{form.last_name}}  
+				{%for error in form.last_name.errors%}
+				   <span class="text-danger">{{error}}</span>
+				{%endfor%}
+			</div>
+		</div>
+		<div class="inp-field">
+			{{form.username}}  
+			{%for error in form.username.errors%}
+			   <span class="text-danger">{{error}}</span>
+			{%endfor%}
+		</div>
+		<div class="inp-field">
+			{{form.password}}  
+			{%for error in form.password.errors%}
+			   <span class="text-danger">{{error}}</span>
+			{%endfor%}
+		</div>
+		<div class="final-sub">
+		<input  type="submit" class="btn admin-button btn-lg" value="Sign up" />
+		</div>
+      </form>
+      <div class="text-center final-div">
+        <span class="last-text">Already have an account?</span>&nbsp&nbsp<a href="adminlogin">Login here</a>
+      </div>
+    </form>
+  </body>
+</html>

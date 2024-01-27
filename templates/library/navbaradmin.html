@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Bootstrap 4 Static Navbar with Dropdown and Search Form</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+      .bs-example {
+        margin: 0px;
+      }
+      .navbar-brand {
+        font-size: 20px;
+        font-family: sans-serif;
+      }
+      .main-navbar {
+        background-color: black !important;
+        padding-left: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .parent-nav-text {
+        display: flex;
+        justify-content: end;
+      }
+      .child-nav {
+        display: flex;
+      }
+      .for-text {
+        color: white;
+        padding-right: 20px;
+      }
+      .for-text:hover {
+        color: rgb(0, 225, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bs-example">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top main-navbar">
+        <a href="/" class="">
+          <img
+            src="data:image/svg+xml,%3Csvg width='57' height='64' viewBox='0 0 57 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.125 29.8438C22.4375 24.5312 15.25 20.8125 7.25 19.375C3.46875 18.7188 0 21.7188 0 25.5625V45.0625C0 50.3125 2.25 53.0625 5.34375 53.4688C13.1562 54.4688 20.25 57.6875 26.0625 62.4375C27.1562 63.3438 28.9375 63.4375 30.0312 62.5625C35.875 57.7812 43.0313 54.5 50.9063 53.5C53.8438 53.0938 56.25 50.1875 56.25 47.1875V25.5625C56.25 21.7188 52.7812 18.7188 49 19.375C41 20.8125 33.8125 24.5312 28.125 29.8438ZM28.125 18.75C33.3125 18.75 37.5 14.5625 37.5 9.375C37.5 4.1875 33.3125 0 28.125 0C22.9375 0 18.75 4.1875 18.75 9.375C18.75 14.5625 22.9375 18.75 28.125 18.75Z' fill='white'/%3E%3C/svg%3E"
+            alt="Logo"
+          />
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse parent-nav-text"
+          id="navbarCollapse"
+        >
+          <div class="child-nav">
+            <a href="/" class="nav-item nav-link for-text">Home</a>
+            <a href="/aboutus" class="nav-item nav-link for-text">About Us</a>
+            <a href="contactus" class="nav-item nav-link for-text">Contact Us</a>
+            <a href="logout" class="nav-item nav-link for-text">Log Out</a> &nbsp
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
