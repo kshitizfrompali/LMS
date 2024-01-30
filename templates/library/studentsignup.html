@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Sumit</title>
+    <title>Student SignUp</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -87,7 +87,7 @@
         font-style: normal;
         font-weight: 400;
       }
-      .final-div{
+      .final-div {
         margin-top: 1rem;
       }
       .final-div a {
@@ -99,12 +99,57 @@
       .first-field {
         margin-bottom: 1rem;
       }
-      .for-firstTwo{
+      .for-firstTwo {
         display: flex;
-        gap:1rem;
+        gap: 1rem;
       }
-      .form-horizontal{
-        padding:20px
+      .form-horizontal {
+        padding: 20px;
+      }
+      @media only screen and (max-width: 1600px) and (min-width: 1000px) {
+        .signup-form {
+          margin-top: 0%;
+        }
+        .title-text {
+          font-size: 30px;
+          margin-bottom: 1rem;
+        }
+        .second-text {
+          font-size: 18px;
+          margin-bottom: 2rem;
+        }
+        .form-horizontal {
+          padding: 0px;
+        }
+        .first-fields {
+          width: 143px;
+          padding-bottom: 24px;
+        }
+        .first-fields input {
+          font-size: 12px;
+        }
+        .first-field {
+          width: 300px;
+          font-size: 12px;
+        }
+        .first-field input {
+          font-size: 12px;
+        }
+        .form-group input {
+          font-size: 12px;
+        }
+        .signup-form .btn {
+          margin-top: 8px;
+          margin-bottom: 10px;
+          min-width: 90px;
+          font-size: 14px;
+        }
+        .last-text {
+          font-size: 14px;
+        }
+        .final-div a {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -118,8 +163,8 @@
         {% csrf_token %}
         <div class="form-group">
           <div class="for-firstTwo">
-            <div class="first-field">{{ form1.first_name }}</div>
-            <div class="first-field">{{ form1.last_name }}</div>
+            <div class="first-fields">{{ form1.first_name }}</div>
+            <div class="first-fields">{{ form1.last_name }}</div>
           </div>
           <div class="first-field">{{ form1.username }}</div>
           <div class="first-field">{{ form1.password }}</div>
@@ -131,11 +176,7 @@
         {% endfor %}
 
         <div class="final-sub">
-          <input
-            type="submit"
-            class="btn admin-button btn-lg"
-            value="Sign up"
-          />
+          <input type="submit" class="btn admin-button" value="Sign up" />
         </div>
       </form>
       <div class="text-center final-div">

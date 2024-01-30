@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>LazyCoder || sumit</title>
+    <title>Student Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -61,21 +61,67 @@
         font-style: normal;
         font-weight: 400;
       }
-      .form-group{
-        display: flex;
-      }
       .for-label{
         color:black;
         padding-top: 5px;
+        margin-bottom: 0px;
       }
         .for-input input{
         border-radius: 5px ;
         border:2px solid black;
         width:300px;
         padding: 3px;
+        margin-bottom: 1rem;
       }
       .final-div{
         margin-top: 4rem;
+      }
+      @media only screen and (max-width: 1600px) and (min-width: 1000px)  {
+        .for-image{
+          width:60px;
+          height: 70px;
+        }
+        .title-text-top{
+          margin-top: 1rem;
+			    font-size:24px
+	    	}
+       .admin-button {
+        margin-top: 8px;
+        }
+      .signup-form {
+        margin-top: 2%;
+      }
+      .final-div{
+        margin-top: 2rem;
+      }
+      .for-input input {
+          width: 200px;
+          padding: 3px;
+          font-size: 12px;
+        }
+        .form-group {
+          margin-left: 1.6rem;
+          margin-bottom: 0px;
+        }
+        .for-label {
+          font-size: 14px;
+        }
+        .admin-button {
+          font-size: 14px;
+          min-width: 80px;
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+        .last-text {
+          font-size: 14px;
+        }
+        .signup-form form a {
+          font-size: 14px;
+        }
+        .final-div {
+          margin-left: 1rem;
+          margin-top: 10px;
+        }
       }
     </style>
 
@@ -103,7 +149,7 @@
             <div class="final-sub">
               <input
                 type="submit"
-                class="btn admin-button btn-lg"
+                class="btn admin-button"
                 value="Login"
               />
             </div>
@@ -113,5 +159,7 @@
                 >Signup here</a
               >
             </div>
+          </div>
+        </form>
   </body>
 </html>

@@ -14,11 +14,11 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    if 'shell' in sys.argv:
-        # see: https://github.com/django/django/pull/12172
-        # os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
+    # if 'shell' in sys.argv:
+    #     # see: https://github.com/django/django/pull/12172
+    #     # os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
-        sys.argv[sys.argv.index('shell')] = 'shell_plus'
+    #     sys.argv[sys.argv.index('shell')] = 'shell_plus'
     execute_from_command_line(sys.argv)
 
 

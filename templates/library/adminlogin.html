@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>LazyCoder || sumit</title>
+    <title>Admin Login</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -91,22 +91,63 @@
       .signup-form form a:hover {
         text-decoration: underline;
       }
-      .for-label{
-        color:black;
-        /* margin-bottom:0px */
-        padding-top: 5px;
+      .for-label {
+        color: black;
+        margin-bottom: 0px;
       }
-      .form-group{
-        display: flex;
-      }
-      .for-input input{
-        border-radius: 5px ;
-        border:2px solid black;
-        width:300px;
+      .for-input input {
+        border-radius: 5px;
+        border: 2px solid black;
+        width: 300px;
         padding: 3px;
+        margin-bottom: 10px;
       }
-      .final-div{
+      .final-div {
         margin-top: 5rem;
+      }
+      @media only screen and (max-width: 1600px) and (min-width: 1000px) {
+        .for-image {
+          width: 60px;
+          height: 70px;
+        }
+        .final-div {
+          margin-top: 2rem;
+        }
+        .signup-form {
+          margin-top: 2%;
+        }
+        .image-wrapper h2 {
+          font-size: 24px;
+          margin-bottom: 1rem;
+        }
+        .for-label {
+          font-size: 14px;
+        }
+        .for-input input {
+          width: 200px;
+          padding: 3px;
+          font-size: 12px;
+        }
+        .form-group {
+          margin-left: 1.5rem;
+          margin-bottom: 10px;
+        }
+        .admin-button {
+          font-size: 14px;
+          min-width: 80px;
+          margin-bottom: 20px;
+          margin-top: 10px;
+        }
+        .last-text {
+          font-size: 14px;
+        }
+        .signup-form form a {
+          font-size: 14px;
+        }
+        .final-div {
+          margin-left: 1rem;
+          margin-top: 10px;
+        }
       }
     </style>
   </head>
@@ -122,18 +163,15 @@
 
         {% csrf_token %} {% for field in form %}
         <div class="form-group">
-          <label class="for-label col-xs-4">{{ field.label_tag }}</label>&nbsp&nbsp
+          <label class="for-label col-xs-4">{{ field.label_tag }}</label
+          >&nbsp&nbsp
           <div class="col-xs-8 for-input">{{ field }}</div>
         </div>
         {% endfor %}
         <div class="final-sub">
-          <input
-            type="submit"
-            class="btn admin-button btn-lg"
-            value="Log In"
-          />
+          <input type="submit" class="btn admin-button" value="Log In" />
         </div>
-        <div class="text-center final-div">
+        <div class="final-div">
           <span class="last-text">Do not have an account?</span>&nbsp<a
             href="adminsignup"
             >Signup here</a

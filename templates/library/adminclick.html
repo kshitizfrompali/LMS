@@ -25,27 +25,27 @@
         margin-bottom: 0px;
       }
       body {
-      margin: 0;
-      padding: 0;
-    }
+        margin: 0;
+        padding: 0;
+      }
 
-    .container-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      height: 90vh;
-    }
-      .main-wrapper{
+      .container-wrapper {
         display: flex;
-        padding:5rem;
-        justify-content: center; 
-        align-items: center; 
-        box-shadow: 11px 10px 18px 0px  rgb(175, 175, 175);   
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 90vh;
+      }
+      .main-wrapper {
+        display: flex;
+        padding: 5rem;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 11px 10px 18px 0px rgb(175, 175, 175);
         border-radius: 10px;
       }
-      .child-wrapper{
+      .child-wrapper {
         text-align: center;
       }
       .admin-button {
@@ -66,27 +66,59 @@
         font-weight: 400;
         margin-bottom: 3rem;
       }
-      .for-image{
+      .for-image {
         margin-bottom: 1rem;
+      }
+      @media only screen and (max-width: 1600px) and (min-width: 1000px) {
+        .main-wrapper {
+          padding: 2rem;
+        }
+        .head-text {
+          font-size: 24px;
+        }
+        .norm-text {
+          font-size: 18px;
+          margin-bottom: 2rem;
+        }
+        .for-image {
+          width: 60px;
+          height: 70px;
+          margin-bottom: 1rem;
+        }
+        .testing {
+          width: 300px;
+          height: 300px;
+        }
+        .admin-button {
+          padding: 3px 15px;
+          margin-right: 1rem;
+          font-size:14px
+        }
       }
     </style>
   </head>
   <body>
     <div class="container-wrapper">
-    <div class="main-wrapper">
-    <div >
-      <img  src="{% static "images/admT.png" %}" width="520px" height="520px" alt="">
+      <div class="main-wrapper">
+        <div>
+          <img class="testing" src="{% static "images/admT.png" %}"
+          width="520px" height="520px" alt="">
+        </div>
+        <div class="child-wrapper">
+          <img class="for-image" src="{% static "images/admV.png" %}"
+          width="90px" height="100px" alt="">
+          <h1 class="head-text">Hello, Admin</h1>
+          <p class="norm-text">Welcome to Online Library Management System.</p>
+          <p class="">
+            <a class="btn admin-button" href="adminsignup" role="button"
+              >SignUp</a
+            >
+            <a class="btn admin-button" href="adminlogin" role="button"
+              >Login</a
+            >
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="child-wrapper">
-      <img class="for-image" src="{% static "images/admV.png" %}" width="90px" height="100px" alt="">
-      <h1 class="head-text">Hello, Admin</h1>
-      <p class="norm-text">Welcome to Online Library Management System.</p>
-      <p class="">
-        <a class="btn btn-lg admin-button" href="adminsignup" role="button">SignUp</a>
-        <a class="btn btn-lg admin-button" href="adminlogin" role="button">Login</a>
-      </p>
-    </div>
-  </div>
-</div>
   </body>
 </html>

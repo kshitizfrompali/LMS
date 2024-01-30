@@ -93,7 +93,8 @@ def addbook_view(request):
         form=forms.BookForm(request.POST)
         if form.is_valid():
             user=form.save()
-            return render(request,'library/bookadded.html')
+            return HttpResponseRedirect('viewbook')
+            # return re(request,'library/bookadded.html')
     return render(request,'library/addbook.html',{'form':form})
 
 @login_required(login_url='adminlogin')
@@ -121,7 +122,7 @@ def issuebook_view(request):
                 obj.save()
             except:
                 return render(request,'library/issuebook.html',{'form':form})
-            return render(request,'library/bookissued.html')
+            return HttpResponseRedirect('viewissuedbook')
     return render(request,'library/issuebook.html',{'form':form})
 
 

@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>LazyCoder || sumit</title>
+    <title>Admin SignUp</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -61,6 +61,7 @@
       }
 	  .main-name{
 		display: flex;
+		gap: 15px;
 	  }
 	  .for-radius{
 		border-radius: 10px;
@@ -91,6 +92,43 @@
 	  .final-div{
 		margin-top:1rem;
 	  }
+	  .inp-fields{
+		padding-bottom: 24px;
+	  }
+	  @media only screen and (max-width: 1600px) and (min-width: 1000px)  {
+		.title-text {
+        font-size: 30px;
+      }
+	  .second-text{
+		font-size: 18px;
+	  }
+	  .inp-field {
+		width: 300px;
+	  }
+	  .inp-fields{
+		width: 143px;
+		padding-bottom: 24px;
+	  }
+	  .main-name{
+		display: flex;
+		gap: 15px;
+	  }
+	  .form-control{
+		font-size: 12px;
+	  }
+	  .signup-form .btn {
+        margin-top: 8px;
+        margin-bottom: 10px;
+		min-width: 100px;
+		font-size:14px
+      }
+	  .last-text{
+		font-size: 14px;
+	  }
+	  .final-div a{
+		font-size: 14px;
+	  }
+      }
     </style>
   </head>
   <body>
@@ -101,13 +139,13 @@
           <center><h5 class="second-text">Now Let’s Control The Library.</h5></center>
 		{% load static %}
 			 <div class="main-name">
-			 <div class="inp-field pr-4">
+			 <div class="inp-fields">
 				{{form.first_name}}  
 				{%for error in form.first_name.errors%}
 				   <span class="text-danger">{{error}}</span>
 				{%endfor%}
 			</div>
-			<div class="inp-field">
+			<div class="inp-fields">
 				{{form.last_name}}  
 				{%for error in form.last_name.errors%}
 				   <span class="text-danger">{{error}}</span>
@@ -127,7 +165,7 @@
 			{%endfor%}
 		</div>
 		<div class="final-sub">
-		<input  type="submit" class="btn admin-button btn-lg" value="Sign up" />
+		<input  type="submit" class="btn admin-button" value="Sign up" />
 		</div>
       </form>
       <div class="text-center final-div">
