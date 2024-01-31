@@ -2,12 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from . import forms,models
 from django.http import HttpResponseRedirect
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required,user_passes_test
 from datetime import datetime,timedelta,date
 from django.core.mail import send_mail
 from librarymanagement.settings import EMAIL_HOST_USER
+from .models import IssuedBook, StudentExtra, Book
 
 
 def home_view(request):
@@ -198,6 +199,27 @@ def contactus_view(request):
             email = sub.cleaned_data['Email']
             name=sub.cleaned_data['Name']
             message = sub.cleaned_data['Message']
-            send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['wapka1503@gmail.com'], fail_silently = False)
+            send_mail(str(name)+' || '+str(email),message, EMAIL_HOST_USER, ['ishandhungel2019@gmail.com'], fail_silently = False)
             return render(request, 'library/contactussuccess.html')
     return render(request, 'library/contactus.html', {'form':sub})
+
+@login_required(login_url='adminlogin')
+@user_passes_test(is_admin)
+def delete_issued_book(request):
+    form = forms.IssuedBookForm()
+    if request.method == 'GET':
+        return render(request, 'library/deleteissuedbook.html', {'form': form})
+    if request.method == 'POST':
+        print(request.POST)
+        isbn = request.POST.get('isbn2')
+        isbn = str(isbn)
+        try:
+            user = request.POST.get('enrollment2')
+            user = StudentExtra.objects.get(user=User.objects.get(id=int(user)))
+        except Exception as e:
+           return render(request,'library/deleteissuedbook.html',context={'msg':'User does not exist','form': form})
+        try:
+            IssuedBook.objects.get(isbn=isbn,user=user).delete()
+        except Exception as e:
+            return render(request, 'library/deleteissuedbook.html', context={'msg': 'User with that book does not exist','form':form})
+    return HttpResponseRedirect('viewissuedbook')

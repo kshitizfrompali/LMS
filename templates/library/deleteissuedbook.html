@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Library Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- <script type="text/javascript">
+      $(document).ready(function() {
+        $("form").submit(function(e) {
+          e.preventDefault();
+
+          alert("Book issued successfully!");
+
+          window.location.href = "viewissuedbook";
+        });
+      });
+    </script> -->
+    <style type="text/css">
+      .signup-form {
+        width: 500px;
+        margin: auto;
+        margin-top: 10%;
+        margin-bottom: 5.9rem;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        box-shadow: 11px 10px 18px 0px rgb(175, 175, 175);
+        border-radius: 10px;
+      }
+      .signup-form a {
+        color: #737277;
+        text-decoration: none;
+      }
+      .signup-form a:hover {
+        color: #737277;
+        text-decoration: underline;
+      }
+      .image-wrapper {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .image-wrapper h2 {
+        margin-top: 1rem;
+        color: black;
+      }
+      .last-text {
+        color: black;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      }
+      .final-sub {
+        text-align: center;
+      }
+      .admin-button {
+        background-color: black !important;
+        color: white !important;
+        border-radius: 28px !important;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 20px;
+        min-width: 140px;
+        margin-bottom: 20px;
+      }
+      .admin-button:hover,
+      .admin-button:focus {
+        background: #41cba9 !important;
+        outline: none !important;
+      }
+      .form-group {
+        display: flex;
+      }
+      .for-label {
+        color: black;
+        padding-top: 3px;
+      }
+      .for-input {
+        margin-top: 4px !important;
+      }
+      select {
+        margin-left: 2rem !important;
+        width: 350px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: white;
+        border: 2px solid black;
+        margin-bottom: 1rem !important;
+      }
+      @media only screen and (max-width: 1600px) and (min-width: 1000px) {
+        .image-wrapper h2 {
+          font-size: 24px;
+          margin-bottom: 2rem;
+        }
+        .signup-form {
+          width: 400px;
+          margin-top: 14%;
+          padding: 15px 0;
+        }
+        .for-input select {
+          width: 250px;
+          font-size: 12px;
+          margin-right: 2.5rem;
+        }
+        .admin-button {
+          min-width: 80px;
+          font-size: 12px !important;
+          margin-top: 1rem;
+          margin-bottom: 1.5rem;
+          padding: 5px !important;
+        }
+        .last-text {
+          font-size: 12px;
+        }
+        .signup-form a {
+          font-size: 12px;
+        }
+        .form-group{
+          margin-bottom: 8px!important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+
+    <div class="signup-form">
+     {% if msg %}
+    <p class="error-message">{{ msg }}</p>
+  {% endif %}
+      <form method="post" class="form-horizontal">
+        <div class="image-wrapper">
+          <h2>REMOVE ISSUED BOOKS</h2>
+        </div>
+
+        {% csrf_token %} {% for field in form %}
+        <div class="form-group">
+          <!-- <label class="for-label col-xs-4">{{ field.label_tag }}</label>&nbsp&nbsp -->
+          <div class="col-xs-8 for-input">{{ field }}</div>
+        </div>
+        {% endfor %}
+
+        <div class="final-sub">
+          <button type="submit" class="btn admin-button">REMOVE</button>
+        </div>
+      </form>
+      <div class="text-center">
+        <span class="last-text">View Issued Book to Student</span>&nbsp<a
+          href="viewissuedbook"
+          >Click here</a
+        >
+      </div>
+    </div>
+
+    {% include "library/footer.html" %}
+  </body>
+</html>
