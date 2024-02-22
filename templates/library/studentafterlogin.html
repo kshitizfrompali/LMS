@@ -34,9 +34,10 @@
       .main-top {
         margin-top: 3.2%;
         font-size: 40px;
+        background: #00c2ff;
         font-weight: 500;
         text-align: center;
-        color: black;
+        color: white;
         margin-bottom: 2rem;
       }
       .mainLanding {
@@ -81,17 +82,21 @@
       }
       @media only screen and (max-width: 1600px) and (min-width: 1000px) {
         .main-top {
-          margin-top: 7%;
-          font-size: 28px;
-          margin-bottom: 1rem;
+          background-color: #00c2ff;
+          margin-top: 4%;
+          font-size: 20px;
+          margin-bottom: 2rem;
+          padding:1rem 0;
+          color: white;
         }
         .for-Image {
-          width: 350px;
-          height: 420px;
+          width: 300px;
+          height: 480px;
         }
         .welcome-title {
-          font-size: 28px;
+          font-size: 38px;
           margin-bottom: 1rem;
+          font-weight: 600;
         }
         .norm {
           font-size: 18px;
@@ -99,11 +104,13 @@
         }
         .last-text {
           font-size: 28px;
+          font-weight: 500;
+          margin:2rem 0;
         }
         .card-comp {
-          width: 150px;
-          margin-left: 8rem;
-          padding: 10px;
+          width: 200px;
+          margin-left: 7rem;
+          padding: 20px 20px 0 20px;
         }
         .forButton {
           font-size: 18px;
@@ -113,10 +120,12 @@
         }
         .forImage {
           width: 60px;
-          height: 60px;
+          height: 70px;
         }
         .forButton {
           font-size: 14px;
+          padding-bottom: 5px;
+          padding-top: 10px;
         }
       }
     </style>
@@ -146,8 +155,7 @@
               <img class="forImage" src="{% static "images/View2.png" %}"
               width="108px" height="108px" alt="Card image cap">
               <a href="viewissuedbookbystudent" class="forButton"
-                >View<br />
-                Issued Book</a
+                >View issued book to you</a
               >
             </div>
           </a>

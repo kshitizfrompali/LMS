@@ -12,8 +12,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
-    <title>LazyCoder || sumit</title>
-
+    <title>Library Management System</title>
+    <style>
+      .form-group{
+        margin-top: 4rem;
+      }
+     label{
+        font-size: 18px !important;
+        padding-right: 5px;
+      }
+      input{
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 2px 0;
+        font-size:16px
+      }
+      textarea{
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size:16px
+      }
+      .admin-button {
+        background-color: black !important;
+        color: white;
+        border-radius: 28px;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 18px;
+        min-width: 140px;
+        margin-bottom: 20px;
+      }
+      .admin-button .btn:hover,
+      .admin-button .btn:focus {
+        background: #41cba9;
+        outline: none !important;
+      }
+    </style>
 
   </head>
   <body>
@@ -22,7 +56,7 @@
 <br><br>
 
 <center>
-        <h3 class = 'alert alert-success'>Send Us Your Valuable Feedback !</h3>
+        <!-- <h3 class = 'alert alert-success'>Send Us Your Valuable Feedback !</h3> -->
 
     <form method="POST">
         <!-- Very Important csrf Token -->
@@ -32,10 +66,11 @@
             <h3>{{ form.as_p }}</h3>
         </p>
             <br>
-            <input type="submit" value="Send Message" class = 'btn btn-primary btn-lg'>
+            <input type="submit" value="Send Message" class = 'btn btn-primary admin-button'>
                 </div>
             </form>
         </center>
+        <br/><br/>
     {% include "library/footer.html" %}
   </body>
 </html>
