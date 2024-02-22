@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 from datetime import datetime,timedelta,date
 from django.core.mail import send_mail
 from librarymanagement.settings import EMAIL_HOST_USER
-from .models import IssuedBook, StudentExtra, Book
+from .models import IssuedBook, StudentExtra, Book, ReturnedBookDetail
 
 
 def home_view(request):
@@ -216,10 +216,34 @@ def delete_issued_book(request):
         try:
             user = request.POST.get('enrollment2')
             user = StudentExtra.objects.get(user=User.objects.get(id=int(user)))
+
         except Exception as e:
            return render(request,'library/deleteissuedbook.html',context={'msg':'User does not exist','form': form})
         try:
+            issued_date = IssuedBook.objects.get(user=user, isbn=isbn).issuedate
+            days = (date.today() - issued_date)
+            d = days.days
+            fine = 0
+            if d > 15:
+                day = d - 15
+                fine = day * 10
+            ReturnedBookDetail.objects.create(user=user, isbn=isbn, issued_date=issued_date,fine=fine)
+        except Exception as e:
+            print(e)
+            pass
+        try:
             IssuedBook.objects.get(isbn=isbn,user=user).delete()
+
+
         except Exception as e:
             return render(request, 'library/deleteissuedbook.html', context={'msg': 'User with that book does not exist','form':form})
     return HttpResponseRedirect('viewissuedbook')
+
+
+def returned_book_detail(request):
+    qs = ReturnedBookDetail.objects.all()
+    total_fine = 0
+    for fine in qs.values_list('fine',flat=True):
+        total_fine+=fine
+    return render(request, 'library/returnedbookdetail.html', {'qs': qs,'total_fine':total_fine})
+
